@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Elleday</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/font-awesome.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/animate.css" type="text/css" />
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
+    </head>
+    
+<body>
+
+<!-- NAVBAR ----------------------------------------------------------------->    
+    <nav class="navbar navbar-default navbar-fixed-top nav-transparent">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="static_pages/index.html">
+                    <img class="nav-logo" src="images/logo.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-signup navbar-btn" data-toggle="modal" data-target="#signup">
+                            Sign Up
+                        </button>
+                        <button type="button" class="btn btn-login navbar-btn" data-toggle="modal" data-target="#login">
+                            Log In
+                        </button>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signuplabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="signuplabel">Sign Up For Elleday</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="signup" method="post" action="/signup">
+                        <input name="user[name]" type="text" placeholder="Type your username here" required="required" class="input">
+                        <input name="user[password]" type="password" placeholder="Choose a password" required="required" class="input">
+                        <input name="user[password2]" type="password" placeholder="Confirm your password" required="required" class="input">
+                        <input name="user[email]" type="email" placeholder="E-mail address" class="input">
+                        <input type="submit" value="Sign me up!" class="inputButton">
+                        <hr>
+                        <div class="text-center">
+                            <button class="btn btn-social btn-google text-center">
+                                <span class="fa fa-google"></span> <h6 class="social-button">Sign in with Google</h6>
+                            </button>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <button class="btn btn-social btn-facebook text-center">
+                                <span class="fa fa-facebook"></span> <h6 class="social-button">Sign in with Facebook</h6>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginlabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="loginlabel">Log In To Elleday</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="login" method="post" action="/login">
+                        <input name="user[name]" type="text" placeholder="Type your username here" required="required" class="input">
+                        <input name="user[password]" type="password" placeholder="Enter your password" required="required" class="input">
+                        <input type="submit" value="Log me in!" class="inputButton">
+                        <hr>
+                        <div class="text-center">
+                            <button class="btn btn-social btn-google text-center">
+                                <span class="fa fa-google"></span> <h6 class="social-button">Sign in with Google</h6>
+                            </button>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <button class="btn btn-social btn-facebook text-center">
+                                <span class="fa fa-facebook"></span> <h6 class="social-button">Sign in with Facebook</h6>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- HEADER ----------------------------------------------------------------->  
+    <div class="container-fluid about-bg">
+        <div class="row team-header">
+            <h1 class="white-font">Powered by people</h1>
+        </div>
+        <div class="row margin-top-spacing">
+            <ul id="inline-list">
+                <li><a href="/company.html">Company</a></li>
+                <li><a href="/values.html">Values</a></li> 
+                <li class="active"><a href="/team.html">Team</a></li> 
+                <li><a href="/contact.html">Contact</a></li> 
+            </ul>
+            <div class="container">
+                <div class="row margin-spacing">
+                    <div class="col-sm-3">
+                        <img src="images/profile-pic-a.jpg" class="about-team">
+                    </div>
+                    <div class="col-sm-9">
+                        <h2 class="about-h2">Marten Lunge</h2>
+                        <h5 class="about-h3">Founder & CEO</h5>
+                        <p class="text-left">
+                            Originally from Tartu, Estonia - he grew accustomed to different cultures at a young age, having moved to Luxembourg to finish his last four years of secondary school there. He moved on to England to enrol at the Warwick Business School and met with even more great people from all over the world. After finishing his studies he returned to Estonia and soon joined a professional SaaS start-up Weekdone that helps team managers around the globe to manage their teams better. He was part of helping Weekdone reach profitability ahead of schedule, despite being the only person at the business development team for a year. With Weekdone and a previous project, he has over six years of experience with start-ups. His true passion has always been travelling and Elleday enables to improve travelling even more and create a great product for travellers out there!
+                        </p>
+                    </div>
+                </div>
+                <div class="row margin-spacing">
+                    <div class="col-sm-9">
+                        <h2 class="about-h2">Aare Puussaar</h2>
+                        <h5 class="about-h3">Chief Technology Officer</h5>
+                        <p class="text-left">
+                            Aare has over eight years of experience as a developer and his current passion lies in data science - in understanding the relationship between data, information and knowledge. He was motivated to pursue his doctorate at the Newcastle University, to explore how we can configure technology to serve the needs of the citizens and how to provide people the tools to reclaim the ownership of their data. Before starting his doctorate, he was the development lead with Positium - a company focusing on location-based insights through mobile data. He used the power of Hadoop to build a framework for extracting meaningful insights from passive mobile positioning data.
+                        </p>
+                    </div>
+                    <div class="col-sm-3">
+                        <img src="images/profile-pic-a.jpg" class="about-team">
+                    </div>
+                </div>
+                <div class="row margin-spacing">
+                    <div class="col-sm-3">
+                        <img src="images/profile-pic-a.jpg" class="about-team">
+                    </div>
+                    <div class="col-sm-9">
+                        <h2 class="about-h2">John Smith</h2>
+                        <h5 class="about-h3">Founder & Chief Executive Officer</h5>
+                        <p class="text-left">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget eros in leo varius aliquet a vel neque. Nunc ante eros, blandit eget risus vitae, rutrum cursus est. Vivamus pharetra turpis a lacus placerat, nec maximus tellus ornare. Ut nec felis sit amet nulla rutrum maximus sed ut mi. Fusce quis accumsan felis. Vivamus sagittis varius malesuada. Aenean sed ligula non ante pharetra sodales eu a quam. Suspendisse id vulputate odio, ac molestie justo. Fusce accumsan ante non tincidunt fringilla. Aenean a commodo ipsum. Mauris eget feugiat purus, ut maximus felis. Ut volutpat dolor tempor purus luctus ornare. Morbi venenatis ex nec augue accumsan, non consectetur sem dignissim.
+                        </p>
+                    </div>
+                </div>
+                <div class="row margin-spacing">
+                    <div class="col-sm-9">
+                        <h2 class="about-h2">John Smith</h2>
+                        <h5 class="about-h3">Founder & Chief Executive Officer</h5>
+                        <p class="text-left">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget eros in leo varius aliquet a vel neque. Nunc ante eros, blandit eget risus vitae, rutrum cursus est. Vivamus pharetra turpis a lacus placerat, nec maximus tellus ornare. Ut nec felis sit amet nulla rutrum maximus sed ut mi. Fusce quis accumsan felis. Vivamus sagittis varius malesuada. Aenean sed ligula non ante pharetra sodales eu a quam. Suspendisse id vulputate odio, ac molestie justo. Fusce accumsan ante non tincidunt fringilla. Aenean a commodo ipsum. Mauris eget feugiat purus, ut maximus felis. Ut volutpat dolor tempor purus luctus ornare. Morbi venenatis ex nec augue accumsan, non consectetur sem dignissim.
+                        </p>
+                    </div>
+                    <div class="col-sm-3">
+                        <img src="images/profile-pic-a.jpg" class="about-team">
+                    </div>
+                </div>
+                <hr>
+                <div class="row margin-spacing">
+                    <div class="col-sm-12">
+                        <h5 class="about-h2">Board of Directors</h5>
+                    </div>
+                </div>
+                <div class="row margin-spacing">
+                    <div class="col-sm-2">
+                        <img src="images/profile-pic-b.png" class="img-circle about-circle-img">
+                        <p class="about-h4">John Smith</p>
+                        <p class="text-left">Founder & Director of Elleday LLC</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <img src="images/profile-pic-c.png" class="img-circle about-circle-img">
+                        <p class="about-h4">John Smith</p>
+                        <p class="text-left">Founder & Director of Elleday LLC</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <img src="images/profile-pic-d.jpg" class="img-circle about-circle-img">
+                        <p class="about-h4">John Smith</p>
+                        <p class="text-left">Founder & Director of Elleday LLC</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <img src="images/profile-pic-e.jpg" class="img-circle about-circle-img">
+                        <p class="about-h4">John Smith</p>
+                        <p class="text-left">Founder & Director of Elleday LLC</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <img src="images/profile-pic-f.jpg" class="img-circle about-circle-img">
+                        <p class="about-h4">John Smith</p>
+                        <p class="text-left">Founder & Director of Elleday LLC</p>
+                    </div>
+                </div>
+            <hr>
+                <div class="row margin-spacing">
+                    <h5 class="about-h2">Careers</h5>
+                    <br>
+                    <p class="text-left">
+                        We are always happy to work together with more talented engineers, designers and marketing people, who are explorers at heart and share the passion in helping people make the most of their time! Currently we have no available positions. However, if you are eager to introduce yourself anyway, contact us at <a href="team@elleday.com">team@elleday.com</a>.
+                    </p>
+                </div>
+            </div> 
+        </div>
+    </div>
+      
+<!-- FOOTER -----------------------------------------------------------------> 
+    <footer class="container-fluid footer-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4>About</h4>
+                    <h6>
+                        <ul>
+                            <li><a href="#">Team & Mission</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </h6>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Partner Hub</h4>
+                    <h6>
+                        <ul>
+                            <li><a href="#">Learn</a></li>
+                            <li><a href="#">Promote</a></li>
+                            <li><a href="#">Track</a></li>
+                        </ul>
+                    </h6>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Moderator Hub</h4>
+                    <h6>
+                        <ul>
+                            <li><a href="#">Learn</a></li>
+                            <li><a href="#">Apply</a></li>
+                            <li><a href="#">Real Elles</a></li>
+                        </ul>
+                    </h6>
+                </div>
+            </div>
+            <br>
+            <h6>
+                Please do let us know if you have any questions or feedback at: <a href="mailto:hello@elleday.com" class="pink-font">hello@elleday.com</a><br> © Elleday 2016. <a href="#">Privacy</a>, <a>terms & conditions apply</a>.
+            </h6>
+        </div>
+    </footer>
+
+<!-- JAVASCRIPT -----------------------------------------------------------------> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </body>
+</html>

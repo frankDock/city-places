@@ -1,0 +1,230 @@
+{% extends 'base_layout.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <div class="container-fluid places-page">
+        <!-- Left Column Starts -->
+        <div class="col-xs-12 col-sm-6 scroll-active padding-nil">
+            <form id="filter-form" action="{% url 'places:apply_filters' %}" method="post">
+                <!-- Filter Starts -->
+                <div id="flip-h">
+                    {% csrf_token %}
+                    <div class="row">
+                        <br/>
+                        <div class="col-sm-3">
+                            <h4 class="grey-font">Tags</h4>
+                        </div>
+                        <div class="col-sm-9">
+                            <ol class="tags">
+                                <li class="tagAdd taglist">
+                                    <input type="text" id="search-field"
+                                           placeholder="Type and press 'Ctrl+Enter'">
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <h4 class="grey-font" id="flip">MORE FILTERS <span class="glyphicon glyphicon-chevron-down"></span>
+                    </h4>
+                </div>
+                <div id="panel">
+                    <div class="row filter-blocks">
+                        <div class="col-sm-3">
+                            <h4 class="grey-font">Categories</h4>
+                        </div>
+                        <div class="col-sm-9">
+                            <div data-toggle="buttons">
+                                <label class="btn btn-default filter-radio">
+                                    <input type="checkbox" name="eat-option" id="option1">
+                                    <span class="radio-dot"></span>
+                                    <p class="grey-font filter-radio-text"><span
+                                            class="glyphicon glyphicon-cutlery glyphicon-spacing"
+                                            aria-hidden="true"></span>
+                                        Eat</p>
+                                </label>
+                                <label class="btn btn-default filter-radio">
+                                    <input type="checkbox" name="nightlife-option" id="option2">
+                                    <span class="radio-dot"></span>
+                                    <p class="grey-font filter-radio-text"><span
+                                            class="glyphicon glyphicon-glass glyphicon-spacing"
+                                            aria-hidden="true"></span>
+                                        Nightlife</p>
+                                </label>
+                                <label class="btn btn-default filter-radio">
+                                    <input type="checkbox" name="sights-option" id="option2">
+                                    <span class="radio-dot"></span>
+                                    <p class="grey-font filter-radio-text"><span
+                                            class="glyphicon glyphicon-camera glyphicon-spacing"
+                                            aria-hidden="true"></span>
+                                        Sights</p>
+                                </label>
+                                <label class="btn btn-default filter-radio">
+                                    <input type="checkbox" name="shop-option" id="option2">
+                                    <span class="radio-dot"></span>
+                                    <p class="grey-font filter-radio-text"><span
+                                            class="glyphicon glyphicon-shopping-cart glyphicon-spacing"
+                                            aria-hidden="true"></span> Shop</p>
+                                </label>
+                                <label class="btn btn-default filter-radio">
+                                    <input type="checkbox" name="culture-option" id="option2">
+                                    <span class="radio-dot"></span>
+                                    <p class="grey-font filter-radio-text"><span
+                                            class="glyphicon glyphicon-globe glyphicon-spacing"
+                                            aria-hidden="true"></span>
+                                        Culture</p>
+                                </label>
+                                <label class="btn btn-default filter-radio">
+                                    <input type="checkbox" name="fun-option" id="option2">
+                                    <span class="radio-dot"></span>
+                                    <p class="grey-font filter-radio-text"><span
+                                            class="glyphicon glyphicon-equalizer glyphicon-spacing"
+                                            aria-hidden="true"></span> Fun</p>
+                                </label>
+                                <label class="btn btn-default filter-radio">
+                                    <input type="checkbox" name="sport-option" id="option2">
+                                    <span class="radio-dot"></span>
+                                    <p class="grey-font filter-radio-text"><span
+                                            class="glyphicon glyphicon-bullhorn glyphicon-spacing"
+                                            aria-hidden="true"></span> Sport</p>
+                                </label>
+                                <label class="btn btn-default filter-radio">
+                                    <input type="checkbox" name="relax-option" id="option2">
+                                    <span class="radio-dot"></span>
+                                    <p class="grey-font filter-radio-text"><span
+                                            class="glyphicon glyphicon-knight glyphicon-spacing"
+                                            aria-hidden="true"></span>
+                                        Relax</p>
+                                </label>
+                                <label class="btn btn-default filter-radio">
+                                    <input type="checkbox" name="saved-option" id="saved">
+                                    <span class="radio-dot"></span>
+                                    <p class="grey-font filter-radio-text"><span
+                                            class="glyphicon glyphicon-floppy-saved glyphicon-spacing"
+                                            aria-hidden="true"></span> Saved</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row filter-blocks-last hidden-xs">
+                        <div class="row">
+                            <div class="col-sm-3 filter-title">
+                                <h4 class="grey-font">Preferences</h4>
+                            </div>
+                            <div class="col-sm-9"></div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h6 class="grey-font text-left">Budget</h6>
+                            <div class="range">
+                                <output id="budget-range-text">Moderate</output>
+                                <input type="range" name="budget-range" id="budget-range" min="1" max="5" value="3"
+                                       onchange="changeBudgetText(value)">
+                            </div>
+                            <hr class="filter-divider">
+                            <h6 class="grey-font text-left">Adventure</h6>
+                            <div class="range">
+                                <output id="adventure-range-text">Let's See</output>
+                                <input type="range" name="adventure-range" id="adventure-range" min="1" max="5"
+                                       value="3"
+                                       onchange="changeAdventureText(value)">
+                            </div>
+                            <hr class="filter-divider">
+                            <h6 class="grey-font text-left">Energy</h6>
+                            <div class="range">
+                                <output id="energy-range-text">Moderate</output>
+                                <input type="range" name="energy-range" id="energy-range" min="1" max="5" value="3"
+                                       onchange="changeEnergyText(value)">
+                            </div>
+                            <hr class="filter-divider">
+                        </div>
+                        <div class="col-sm-6">
+                            <h6 class="grey-font text-left">Style</h6>
+                            <div class="range">
+                                <output id="style-range-text">Regular</output>
+                                <input type="range" name="style-range" id="style-range" min="1" max="5" value="3"
+                                       onchange="changeStyleText(value)">
+                            </div>
+                            <hr class="filter-divider">
+                            <h6 class="grey-font text-left">Landscape</h6>
+                            <div class="range">
+                                <output id="landscape-range-text">Any</output>
+                                <input type="range" name="landscape-range" id="landscape-range" min="1" max="3"
+                                       value="2"
+                                       onchange="changeLandscapeText(value)">
+                            </div>
+                            <hr class="filter-divider">
+                            <h6 class="grey-font text-left">Must See</h6>
+                            <div class="range">
+                                <output id="must-see-range-text">For longer stay</output>
+                                <input type="range" name="must-see-range" id="must-see-range" min="1" max="5" value="3"
+                                       onchange="changeMustSeeText(value)">
+                            </div>
+                            <hr class="filter-divider">
+                        </div>
+                    </div>
+                    <div class="row text-right filter-blocks-last">
+                        <button type="submit" class="btn btn-default btn-pink" id="apply-changes">Apply Changes</button>
+                    </div>
+
+                </div>
+            </form>
+            <!-- Filter Ends -->
+            <div class="mass-selection">
+                {% for place in places %}
+                    {% if forloop.counter0|divisibleby:2 or forloop.first %}
+                    <div class="row results-spacing">
+                    {% endif %}
+                        <div class="col-sm-6">
+                            <!-- Img 1 -->
+                            <div class="caption" onclick="showInfoForPlace({{ place.id }})">
+
+                            <span id="img-trigger-1">
+                                <img src="{{ place.main_image.url }}" class="front-image">
+                                <br><br>
+                                    <p>{{ place.title }}</p>
+                            </span>
+                            </div>
+                        </div>
+                        <div id="info-div">
+                            {% block info_div %}{% endblock %}
+                        </div>
+                    {% if not forloop.counter0|divisibleby:2 or forloop.last %}
+                    </div>
+                    {% endif %}
+                {% empty %}
+                    <div class="row results-spacing">
+                        <h3 class="pink-font">Sorry, no places found :-(</h3>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- Left Column Ends -->
+
+        <!-- Right Column Starts -->
+        <div class="hidden-xs col-sm-6 padding-nil bg-grey">
+            <div class="input-group map-search-bar">
+                <form action="{% url 'places:search' %}" method="post">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input type="text" class="form-control no-glow" placeholder="Search Places" name="search_query">
+                    <span class="input-group-btn">
+                        <input class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"
+                                                                           aria-hidden="true"></span></input>
+                    </span>
+                    </div>
+                </form>
+            </div>
+            {#        <iframe width='100%' height='800px' frameBorder='0'#}
+            {#                src='https://api.mapbox.com/styles/v1/teamlday/cihdujt2v00mabdm1ia2pytm5.html?title=true&access_token=pk.eyJ1IjoidGVhbWxkYXkiLCJhIjoiY2loMjVwN3g3MDBvNHY1bTdvczdnN2owMyJ9.gxHMuIWMBMGfvKPgf25VCA#15.07/59.4338/24.7451'></iframe>#}
+        </div>
+        <!-- Right Column Ends -->
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'js/range-names.js' %}"></script>
+    <script src="{% static 'django_ajax/js/jquery.ajax.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/info-div.js' %}"></script>
+{% endblock %}
+<!-- Filter Bar -->

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Elleday</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/font-awesome.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/animate.css" type="text/css" />
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
+    </head>
+    
+<body>
+
+<!-- NAVBAR ----------------------------------------------------------------->    
+    <nav class="navbar navbar-default navbar-fixed-top nav-transparent">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="static_pages/index.html">
+                    <img class="nav-logo" src="images/logo.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-signup navbar-btn" data-toggle="modal" data-target="#signup">
+                            Sign Up
+                        </button>
+                        <button type="button" class="btn btn-login navbar-btn" data-toggle="modal" data-target="#login">
+                            Log In
+                        </button>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signuplabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="signuplabel">Sign Up For Elleday</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="signup" method="post" action="/signup">
+                        <input name="user[name]" type="text" placeholder="Type your username here" required="required" class="input">
+                        <input name="user[password]" type="password" placeholder="Choose a password" required="required" class="input">
+                        <input name="user[password2]" type="password" placeholder="Confirm your password" required="required" class="input">
+                        <input name="user[email]" type="email" placeholder="E-mail address" class="input">
+                        <input type="submit" value="Sign me up!" class="inputButton">
+                        <hr>
+                        <div class="text-center">
+                            <button class="btn btn-social btn-google text-center">
+                                <span class="fa fa-google"></span> <h6 class="social-button">Sign in with Google</h6>
+                            </button>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <button class="btn btn-social btn-facebook text-center">
+                                <span class="fa fa-facebook"></span> <h6 class="social-button">Sign in with Facebook</h6>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginlabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="loginlabel">Log In To Elleday</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="login" method="post" action="/login">
+                        <input name="user[name]" type="text" placeholder="Type your username here" required="required" class="input">
+                        <input name="user[password]" type="password" placeholder="Enter your password" required="required" class="input">
+                        <input type="submit" value="Log me in!" class="inputButton">
+                        <hr>
+                        <div class="text-center">
+                            <button class="btn btn-social btn-google text-center">
+                                <span class="fa fa-google"></span> <h6 class="social-button">Sign in with Google</h6>
+                            </button>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <button class="btn btn-social btn-facebook text-center">
+                                <span class="fa fa-facebook"></span> <h6 class="social-button">Sign in with Facebook</h6>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- HEADER ----------------------------------------------------------------->  
+    <div class="container-fluid about-bg">
+        <div class="row company-header">
+            <h1 class="white-font">Moderator</h1>
+        </div>
+        <div class="row margin-top-spacing">
+            <div class="container">
+                <div class="row margin-spacing">
+                    <div class="col-sm-4">
+                        <h5 class="about-h2">Dare to Moderate</h5>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="text-left">
+                            Shine a light and karma your way to the moderator status!
+                            <br><br>
+                            Help with your reviews and ratings and in return earn karma points. To show our gratitude in thanks to helping to create a better city guide for everyone - we reward our moderators by sharing more than a quarter of our earnings from their respective cities!
+                            <br><br>
+                            The game itself is easy. There are five levels, that show different user status. You get to the next level by collecting a required amount of karma points. At the ultimate level you will become a moderator and will qualify for the revenue share with all the other moderators in the city, where you earned enough karma. We share 25 per cent of our city revenue with all the moderators who qualified.    
+                            <br><br>
+                            There’s also a special bonus for the Top 3 users! The person who earned the most karma in a given month will be rewarded to keep 5% of the earnings from their respective city, with the second place earning an extra 3% and the third will earn 2%.
+                            <br><br>
+                            We make the revenue we earned in the last 3 months in a city public. We’re big believers in transparency and have no problem with opening our books. When we’re starting out in a city and you notice that we’re not making a lot - well, you can laugh at us, tell your friends and laugh some more, even go online, post about it, maybe create a Reddit circlejerk and really go at it. Or, you can contact our team at <a href="mailto:feedback@elleday.com">feedback@elleday.com</a> and share your thoughts on how, we can increase our earnings - and help to create a larger income pool that we can share among the moderators. You can even get in touch at <a href="mailto:team@elleday.com">team@elleday.com</a> and become our city representative, to help us reach more businesses in your city!
+                            <br><br>
+                            So how do we make money? And what’s included in the city revenue? We charge businesses listed at the featured spots on the front page and for the premium features they can purchase. While we will potentially add a few more revenue sources, currently these make-up the city revenue. This means that, when more businesses buy featured spots and premium features, the higher their respective city earnings will be.
+                            <br><br>
+                            What type of feedback is really helpful? You can leave suggestions for how to reach more businesses in your city or give suggestions for new paid features for businesses.
+                        </p>
+                    </div>
+                </div> 
+                <hr>
+                <div class="row margin-spacing">
+                    <div class="col-sm-4">
+                        <h5 class="about-h2">How To</h5>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="text-left">
+                            How to earn karma? In short by helping to make our city guide better. We reward your actions with karma points in the following way
+                        </p>
+                        <br><br>
+                        <table class="table table-hover table-bordered table-responsive table-striped">
+                            <tr class="info">
+                                <td>Action</td>
+                                <td>Points</td>
+                            </tr>
+                            <tr>
+                                <td>Give a +/- rating to a listed place</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Rate tags with +/-</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Add one new tag</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Write a text review</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Rate preferences</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Save place</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Give Gold = 1 gold</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>Upload a photo to a place (only for moderators)</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Give a upvote to someone else’s text review</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Appropriately report an inappropriate text review</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Your comments net ratings in +/- = Score X</td>
+                                <td>X</td>
+                            </tr>
+                            <tr>
+                                <td>Follow a user</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Receive a follower</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Link your Facebook</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Link your Instagram</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Link your Twitter</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Link your Pinterest</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Upload a cover photo (points are restricted for 3 changes)</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Upload a profile photo (points are restricted for 3 changes)</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <p class="text-left">
+                            Your user status will be based on your karma points. You move up in your status by earning the required amount for the next level. Once you move up a level you benefit from the new points multiplier also!
+                        </p>
+                        <div class="row margin-top-spacing">
+                            <div class="col-sm-10">
+                                <h2 class="text-left">Young Blood</h2>
+                                <h5 class="text-left">MULTIPLYER=1x</h5>
+                                <p class="text-left">
+                                    No shame in getting started! The young blood is still learning the ropes and stepping the first steps towards the moderator level.
+                                </p>
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="images/placeholder-badge.png">
+                            </div>
+                        </div>
+                        <div class="row margin-top-spacing">
+                            <div class="col-sm-10">
+                                <h2 class="text-left">Undergrad</h2>
+                                <h5 class="text-left">MINIMUM KARMA = 1000</h5>
+                                <h5 class="text-left">MULTIPLYER = 2x</h5>
+                                <p class="text-left">
+                                    Woo-hoo, no more diapers and change, no more school lunches and detention! The undergrads are partying their way to the next level!
+                                </p>
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="images/placeholder-badge.png">
+                            </div>
+                        </div>
+                        <div class="row margin-top-spacing">
+                            <div class="col-sm-10">
+                                <h2 class="text-left">Good Samaritan</h2>
+                                <h5 class="text-left">MINIMUM KARMA = 3000</h5>
+                                <h5 class="text-left">MULTIPLYER = 3x</h5>
+                                <p class="text-left">
+                                    The good samaritan is the hero that we hope to deserve, the silent guardian, the charitable soul, the good samaritan!
+                                </p>
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="images/placeholder-badge.png">
+                            </div>
+                        </div>
+                        <div class="row margin-top-spacing">
+                            <div class="col-sm-10">
+                                <h2 class="text-left">Visionary</h2>
+                                <h5 class="text-left">MINIMUM KARMA = 10000</h5>
+                                <h5 class="text-left">MULTIPLYER = 4x</h5>
+                                <p class="text-left">
+                                    This girl or this guy fu*ks! The visionaries know their sh*t! “They don’t do drugs, they are drugs!” Salvador Dali Michael Scott
+                                </p>
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="images/placeholder-badge.png">
+                            </div>
+                        </div>
+                        <div class="row margin-top-spacing">
+                            <div class="col-sm-10">
+                                <h2 class="text-left">Sensei</h2>
+                                <h5 class="text-left">MINIMUM KARMA = 25000</h5>
+                                <h5 class="text-left">MULTIPLYER = 5x</h5>
+                                <p class="text-left">
+                                    Yes! The promised land! The Sensei is a moderator and a moderator is a sensei! When the Sensei speaks, we listen. We learn.
+                                </p>
+                            </div>
+                            <div class="col-sm-2">
+                                <img src="images/placeholder-badge.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row margin-spacing">
+                    <div class="col-sm-4">
+                        <h5 class="about-h2">Existing</h5>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="text-left">
+                            Once you reach the Sensei level, we will send you an e-mail with more information! In short, the moderators share a total of 35% of the city revenue*, in the respective city, where they earned enough karma points to reach the Sensei user status or the moderator level.
+                            <br><br>
+                            25% of the city revenue is distributed equally among all the qualified moderators in a city.
+                            <br>
+                            5% goes to the moderator, who earned the most karma points in the previous month
+                            <br>
+                            3% goes to the moderator, who earned the second most karma points in the previous month
+                            <br>
+                            2% goes to the moderator, who earned the third most karma points in the previous month
+                            <br><br>
+                            Meet with all the existing moderators below:
+                        </p>
+                        <div class="row">
+                            <div class="col-sm-15"><img src="images/profile-pic-d.jpg" class="img-responsive mod-img"></div>
+                            <div class="col-sm-15"><img src="images/profile-pic-d.jpg" class="img-responsive mod-img"></div>
+                            <div class="col-sm-15"><img src="images/profile-pic-d.jpg" class="img-responsive mod-img"></div>
+                            <div class="col-sm-15"><img src="images/profile-pic-d.jpg" class="img-responsive mod-img"></div>
+                            <div class="col-sm-15"><img src="images/profile-pic-d.jpg" class="img-responsive mod-img"></div>
+                            <div class="col-sm-15"><img src="images/profile-pic-d.jpg" class="img-responsive mod-img"></div>
+                            <div class="col-sm-15"><img src="images/profile-pic-d.jpg" class="img-responsive mod-img"></div>
+                            <div class="col-sm-15"><img src="images/profile-pic-d.jpg" class="img-responsive mod-img"></div>
+                            <div class="col-sm-15"><img src="images/profile-pic-d.jpg" class="img-responsive mod-img"></div>
+                            <div class="col-sm-15"><img src="images/profile-pic-d.jpg" class="img-responsive mod-img"></div>
+                        </div>
+                    </div>
+                </div>
+                <hr>    
+                <div class="row margin-spacing">
+                    <div class="col-sm-4">
+                        <h5 class="about-h2">Leaderboard</h5>
+                    </div>
+                    <div class="col-sm-8">
+                        <table class="table table-hover table-bordered table-responsive table-striped">
+                            <tr class="info">
+                                <td>Rank</td>
+                                <td>Username</td>
+                                <td>Karma</td>
+                                <td>Last Month</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>username-1</td>
+                                <td>100</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>username-2</td>
+                                <td>100</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>username-3</td>
+                                <td>100</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>username-4</td>
+                                <td>100</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>username-5</td>
+                                <td>100</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>username-6</td>
+                                <td>100</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>username-7</td>
+                                <td>100</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>username-8</td>
+                                <td>100</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>username-9</td>
+                                <td>100</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>username-10</td>
+                                <td>100</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>username-1</td>
+                                <td>100</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>username-2</td>
+                                <td>100</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>username-3</td>
+                                <td>100</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>username-4</td>
+                                <td>100</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>username-5</td>
+                                <td>100</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>username-6</td>
+                                <td>100</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>username-7</td>
+                                <td>100</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>username-8</td>
+                                <td>100</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>username-9</td>
+                                <td>100</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>username-10</td>
+                                <td>100</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>username-5</td>
+                                <td>100</td>
+                                <td>5</td>
+                            </tr>
+                            <tr class="danger">
+                                <td>6</td>
+                                <td>username-6</td>
+                                <td>100</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>username-7</td>
+                                <td>100</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>username-8</td>
+                                <td>100</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>username-9</td>
+                                <td>100</td>
+                                <td>9</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>username-10</td>
+                                <td>100</td>
+                                <td>10</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <hr>
+                <div class="row margin-spacing">
+                    <div class="col-sm-4">
+                        <h5 class="about-h2">Terms & Conditions</h5>
+                    </div>
+                    <div class="col-sm-8">
+                        <p class="text-left">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin arcu a mattis tincidunt. Cras eu elit metus. Morbi mattis tortor at mollis aliquam. Donec faucibus nibh sed arcu volutpat, ac eleifend sapien laoreet. Maecenas sit amet felis id ligula sollicitudin egestas. Donec ut imperdiet ex. Nulla facilisi. Nullam magna velit, consequat eget lacus ac, sagittis porta augue. In at sapien eu nibh ullamcorper tempus ac vel felis. Duis finibus sollicitudin neque, et sagittis ligula elementum ac. Etiam sem nunc, condimentum quis facilisis sed, posuere id mauris.
+                            <br><br>
+                            Cras suscipit sit amet urna vel rutrum. Nulla semper dictum quam efficitur mollis. Fusce consectetur, eros ut condimentum sodales, tortor turpis congue justo, eget ornare nibh massa a velit. Etiam euismod tortor nisi, vitae pulvinar quam pretium in. Sed tellus felis, placerat vel lacinia eu, bibendum non felis. Aliquam a urna ac diam commodo tincidunt. Suspendisse sit amet diam auctor, mattis quam quis, dapibus ante.
+                            <br><br>
+                            Fusce ut diam sed massa elementum suscipit quis sit amet velit. Suspendisse id dignissim urna. Aenean vel tortor dapibus, iaculis nunc eu, porta tortor. Aliquam erat volutpat. Morbi semper, magna sed finibus suscipit, nibh libero placerat velit, quis dignissim odio metus vitae tellus. Quisque vitae nisl nec felis aliquet sollicitudin et sed orci. Nullam vehicula pellentesque malesuada. Nulla in hendrerit quam. Vivamus nisi purus, tempor eu commodo sed, sagittis at dolor. Etiam tellus lectus, consequat et tempus at, porta in mi. Duis vel nisl tincidunt, viverra elit non, aliquam neque. Aenean at convallis diam. Vestibulum pharetra sed urna non interdum. Donec nec efficitur orci. Pellentesque lobortis, purus ac tempus elementum, mauris metus auctor nunc, at scelerisque dolor dui non urna.
+                            <br><br>
+                            Etiam placerat sit amet diam sit amet porta. Donec eu sapien id urna aliquam dictum. Aliquam ut volutpat augue. Maecenas sagittis dignissim enim eu lobortis. Vestibulum aliquet finibus lacus, ut egestas purus bibendum quis. Curabitur euismod ante ex, eu euismod mauris tincidunt at. Phasellus at purus in lectus suscipit volutpat eu ac ante. Quisque in diam sollicitudin, feugiat lectus vel, dignissim leo. Maecenas pharetra, purus rutrum lobortis elementum, ligula libero tincidunt metus, ut faucibus turpis velit eu velit. Morbi sit amet nibh neque. Suspendisse quis velit ac dui pulvinar fermentum. Nam feugiat rutrum enim, a elementum tortor interdum in. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+<!-- FOOTER -----------------------------------------------------------------> 
+    <footer class="container-fluid footer-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4>About</h4>
+                    <h6>
+                        <ul>
+                            <li><a href="#">Team & Mission</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </h6>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Partner Hub</h4>
+                    <h6>
+                        <ul>
+                            <li><a href="#">Learn</a></li>
+                            <li><a href="#">Promote</a></li>
+                            <li><a href="#">Track</a></li>
+                        </ul>
+                    </h6>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Moderator Hub</h4>
+                    <h6>
+                        <ul>
+                            <li><a href="#">Learn</a></li>
+                            <li><a href="#">Apply</a></li>
+                            <li><a href="#">Real Elles</a></li>
+                        </ul>
+                    </h6>
+                </div>
+            </div>
+            <br>
+            <h6>
+                Please do let us know if you have any questions or feedback at: <a href="mailto:hello@elleday.com" class="pink-font">hello@elleday.com</a><br> © Elleday 2016. <a href="#">Privacy</a>, <a>terms & conditions apply</a>.
+            </h6>
+        </div>
+    </footer>
+
+<!-- JAVASCRIPT -----------------------------------------------------------------> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </body>
+</html>

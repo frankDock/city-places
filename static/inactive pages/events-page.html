@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elleday</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+      
+<!-- NAVBAR ----------------------------------------------------------------->    
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <img class="nav-logo" src="images/logo.png">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-signup navbar-btn" data-toggle="modal" data-target="#signup">
+                        Sign Up
+                    </button>
+                    <button type="button" class="btn btn-login navbar-btn" data-toggle="modal" data-target="#login">
+                        Log In
+                    </button>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+      
+      
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signuplabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="signuplabel">Sign Up For Elleday</h2>
+      </div>
+      <div class="modal-body">
+      <form id="signup" method="post" action="/signup">
+        <input name="user[name]" type="text" placeholder="Type your username here" required="required" class="input">
+        <input name="user[password]" type="password" placeholder="Choose a password" required="required" class="input">
+        <input name="user[password2]" type="password" placeholder="Confirm your password" required="required" class="input">
+        <input name="user[email]" type="email" placeholder="E-mail address" class="input">
+        <input type="submit" value="Sign me up!" class="inputButton">
+          <hr>
+        <div class="text-center">
+        <button class="btn btn-social btn-google text-center">
+            <span class="fa fa-google"></span> <h6 class="social-button">Sign in with Google</h6>
+        </button>
+        </div>
+        <br>
+        <div class="text-center">
+        <button class="btn btn-social btn-facebook text-center">
+            <span class="fa fa-facebook"></span> <h6 class="social-button">Sign in with Facebook</h6>
+        </button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+      
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginlabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="loginlabel">Log In To Elleday</h2>
+      </div>
+      <div class="modal-body">
+      <form id="login" method="post" action="/login">
+        <input name="user[name]" type="text" placeholder="Type your username here" required="required" class="input">
+        <input name="user[password]" type="password" placeholder="Enter your password" required="required" class="input">
+        <input type="submit" value="Log me in!" class="inputButton">
+          <hr>
+        <div class="text-center">
+        <button class="btn btn-social btn-google text-center">
+            <span class="fa fa-google"></span> <h6 class="social-button">Sign in with Google</h6>
+        </button>
+        </div>
+        <br>
+        <div class="text-center">
+        <button class="btn btn-social btn-facebook text-center">
+            <span class="fa fa-facebook"></span> <h6 class="social-button">Sign in with Facebook</h6>
+        </button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EVENTS ----------------------------------------------------------------->  
+
+<div class="container-fluid events-page">
+	<div class="row">
+		<div class="col-xs-12" role="tabpanel">
+            
+            <div class="row">
+            <div class="col-xs-5 col-sm-6 scroll-active mass-selection">
+               
+                <div class="row">
+                    <div class="col-xs-12 padding-nil margin-top-spacing">
+                <ul class="nav nav-justified" id="nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#img-1" aria-controls="dustin" role="tab" data-toggle="tab">
+                            <img class="img-responsive" src="images/events-featured-1.jpg">
+                            <span class="quote"><i class="fa fa-quote-left"></i></span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="#img-2" aria-controls="daksh" role="tab" data-toggle="tab">
+                            <img class="img-responsive" src="images/events-featured-2.jpg">
+                            <span class="quote"><i class="fa fa-quote-left"></i></span>
+                        </a>
+                    </li>
+                    
+                    <br>
+                    
+                    <li role="presentation">
+                        <a href="#img-3" aria-controls="dustin" role="tab" data-toggle="tab">
+                            <img class="img-responsive" src="images/events-featured-3.jpg">
+                            <span class="quote"><i class="fa fa-quote-left"></i></span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="#img-4" aria-controls="daksh" role="tab" data-toggle="tab">
+                            <img class="img-responsive" src="images/events-featured-4.jpg">
+                            <span class="quote"><i class="fa fa-quote-left"></i></span>
+                        </a>
+                    </li>
+
+                    <br>
+                    
+                    <li role="presentation">
+                        <a href="#img-1" aria-controls="dustin" role="tab" data-toggle="tab">
+                            <img class="img-responsive" src="images/events-featured-1.jpg">
+                            <span class="quote"><i class="fa fa-quote-left"></i></span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="#img-2" aria-controls="daksh" role="tab" data-toggle="tab">
+                            <img class="img-responsive" src="images/events-featured-2.jpg">
+                            <span class="quote"><i class="fa fa-quote-left"></i></span>
+                        </a>
+                    </li>
+                    
+                    <br>
+                    
+                    <li role="presentation">
+                        <a href="#img-3" aria-controls="dustin" role="tab" data-toggle="tab">
+                            <img class="img-responsive" src="images/events-featured-3.jpg">
+                            <span class="quote"><i class="fa fa-quote-left"></i></span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="">
+                        <a href="#img-4" aria-controls="daksh" role="tab" data-toggle="tab">
+                            <img class="img-responsive" src="images/events-featured-4.jpg">
+                            <span class="quote"><i class="fa fa-quote-left"></i></span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                </div>
+                </div>
+
+
+            </div>
+                
+                
+            <div class="col-xs-7 col-sm-6 img-description scroll-active">
+                <div class="tab-content" id="tabs-collapse">            
+                    <div role="tabpanel" class="tab-pane fade in active" id="img-1">
+                        <div class="tab-inner"> 
+                            <h2>Place Title 1</h2>
+                            <p>
+                                <span class="glyphicon glyphicon-cutlery" aria-hidden="true"> </span>
+                                <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"> </span>
+                                <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                            </p>
+                            <h5>This is the place description. Etiam tincidunt enim et pretium efficitur. Donec auctor leo sollicitudin.</h5>
+                            
+                            <p>
+                                <strong class="text-uppercase">112 people interested</strong><br>
+                                <button type="button" class="btn btn-default btn-xs">I'm interested</button>
+                                <button type="button" class="btn btn-default btn-xs">Save Place</button>
+                            </p>
+                            <p>
+                                <span class="glyphicon glyphicon-play" aria-hidden="true"> Starts: 9PM</span><br> 
+                                <span class="glyphicon glyphicon-stop" aria-hidden="true"> Ends: 3AM</span>
+                            </p>
+                            <br><hr><br>
+                            <h5><strong class="text-uppercase">Location</strong></h5>
+                            <div class="container-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66946.99041344348!2d26.662556753820823!3d58.37496083642807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb36d8d55d3df7%3A0x400b36d18fc6d10!2sTartu!5e0!3m2!1sen!2see!4v1457386796849" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                            <br><hr><br>
+                            <h5><strong class="text-uppercase">Description</strong></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies purus nec risus posuere, et rhoncus sem pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere fringilla neque. Suspendisse dictum nunc sit amet rutrum molestie. Fusce nisl mauris, lacinia nec pharetra vehicula, volutpat ut lorem. Donec vel convallis lacus. Nullam sem lacus, ultrices ac magna vel, varius maximus velit. Aliquam non ipsum sapien. Ut molestie ex at tellus pretium finibus. Aliquam eget luctus ex, id bibendum sem. Vestibulum vitae metus sed nisi porttitor aliquam.</p>
+                            <hr>
+                        </div>
+                    </div>
+                    
+                    <div role="tabpanel" class="tab-pane fade" id="img-2">
+                        <div class="tab-inner"> 
+                            <h2>Place Title 2</h2>
+                            <p>
+                                <span class="glyphicon glyphicon-cutlery" aria-hidden="true"> </span>
+                                <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"> </span>
+                                <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                            </p>
+                            <h5>This is the place description. Etiam tincidunt enim et pretium efficitur. Donec auctor leo sollicitudin.</h5>
+                            
+                            <p>
+                                <strong class="text-uppercase">112 people interested</strong><br>
+                                <button type="button" class="btn btn-default btn-xs">I'm interested</button>
+                                <button type="button" class="btn btn-default btn-xs">Save Place</button>
+                            </p>
+                            <p>
+                                <span class="glyphicon glyphicon-play" aria-hidden="true"> Starts: 9PM</span><br> 
+                                <span class="glyphicon glyphicon-stop" aria-hidden="true"> Ends: 3AM</span>
+                            </p>
+                            <br><hr><br>
+                            <h5><strong class="text-uppercase">Location</strong></h5>
+                            <div class="container-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66946.99041344348!2d26.662556753820823!3d58.37496083642807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb36d8d55d3df7%3A0x400b36d18fc6d10!2sTartu!5e0!3m2!1sen!2see!4v1457386796849" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                            <br><hr><br>
+                            <h5><strong class="text-uppercase">Description</strong></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies purus nec risus posuere, et rhoncus sem pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere fringilla neque. Suspendisse dictum nunc sit amet rutrum molestie. Fusce nisl mauris, lacinia nec pharetra vehicula, volutpat ut lorem. Donec vel convallis lacus. Nullam sem lacus, ultrices ac magna vel, varius maximus velit. Aliquam non ipsum sapien. Ut molestie ex at tellus pretium finibus. Aliquam eget luctus ex, id bibendum sem. Vestibulum vitae metus sed nisi porttitor aliquam.</p>
+                            <hr>
+                        </div>
+                    </div>
+                    
+                    <div role="tabpanel" class="tab-pane fade" id="img-3">
+                        <div class="tab-inner"> 
+                            <h2>Place Title 3</h2>
+                            <p>
+                                <span class="glyphicon glyphicon-cutlery" aria-hidden="true"> </span>
+                                <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"> </span>
+                                <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                            </p>
+                            <h5>This is the place description. Etiam tincidunt enim et pretium efficitur. Donec auctor leo sollicitudin.</h5>
+                            
+                            <p>
+                                <strong class="text-uppercase">112 people interested</strong><br>
+                                <button type="button" class="btn btn-default btn-xs">I'm interested</button>
+                                <button type="button" class="btn btn-default btn-xs">Save Place</button>
+                            </p>
+                            <p>
+                                <span class="glyphicon glyphicon-play" aria-hidden="true"> Starts: 9PM</span><br> 
+                                <span class="glyphicon glyphicon-stop" aria-hidden="true"> Ends: 3AM</span>
+                            </p>
+                            <br><hr><br>
+                            <h5><strong class="text-uppercase">Location</strong></h5>
+                            <div class="container-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66946.99041344348!2d26.662556753820823!3d58.37496083642807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb36d8d55d3df7%3A0x400b36d18fc6d10!2sTartu!5e0!3m2!1sen!2see!4v1457386796849" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                            <br><hr><br>
+                            <h5><strong class="text-uppercase">Description</strong></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies purus nec risus posuere, et rhoncus sem pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere fringilla neque. Suspendisse dictum nunc sit amet rutrum molestie. Fusce nisl mauris, lacinia nec pharetra vehicula, volutpat ut lorem. Donec vel convallis lacus. Nullam sem lacus, ultrices ac magna vel, varius maximus velit. Aliquam non ipsum sapien. Ut molestie ex at tellus pretium finibus. Aliquam eget luctus ex, id bibendum sem. Vestibulum vitae metus sed nisi porttitor aliquam.</p>
+                            <hr>
+                        </div>
+                    </div>
+                    
+                    <div role="tabpanel" class="tab-pane fade" id="img-4">
+                        <div class="tab-inner"> 
+                            <h2>Place Title 4</h2>
+                            <p>
+                                <span class="glyphicon glyphicon-cutlery" aria-hidden="true"> </span>
+                                <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"> </span>
+                                <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+                            </p>
+                            <h5>This is the place description. Etiam tincidunt enim et pretium efficitur. Donec auctor leo sollicitudin.</h5>
+                            
+                            <p>
+                                <strong class="text-uppercase">112 people interested</strong><br>
+                                <button type="button" class="btn btn-default btn-xs">I'm interested</button>
+                                <button type="button" class="btn btn-default btn-xs">Save Place</button>
+                            </p>
+                            <p>
+                                <span class="glyphicon glyphicon-play" aria-hidden="true"> Starts: 9PM</span><br> 
+                                <span class="glyphicon glyphicon-stop" aria-hidden="true"> Ends: 3AM</span>
+                            </p>
+                            <br><hr><br>
+                            <h5><strong class="text-uppercase">Location</strong></h5>
+                            <div class="container-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66946.99041344348!2d26.662556753820823!3d58.37496083642807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eb36d8d55d3df7%3A0x400b36d18fc6d10!2sTartu!5e0!3m2!1sen!2see!4v1457386796849" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                            <br><hr><br>
+                            <h5><strong class="text-uppercase">Description</strong></h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies purus nec risus posuere, et rhoncus sem pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere fringilla neque. Suspendisse dictum nunc sit amet rutrum molestie. Fusce nisl mauris, lacinia nec pharetra vehicula, volutpat ut lorem. Donec vel convallis lacus. Nullam sem lacus, ultrices ac magna vel, varius maximus velit. Aliquam non ipsum sapien. Ut molestie ex at tellus pretium finibus. Aliquam eget luctus ex, id bibendum sem. Vestibulum vitae metus sed nisi porttitor aliquam.</p>
+                            <hr>
+                        </div>
+                    </div>
+
+                </div>
+            </div>  
+            
+            </div>
+            
+        </div>
+	</div>
+</div>
+    
+ 
+      
+<!-- FOOTER -----------------------------------------------------------------> 
+<footer class="container-fluid footer-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>About</h4>
+                <h6>
+                    <ul>
+                        <li><a href="#">Team & Mission</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Credit</a></li>
+                    </ul>
+                </h6>
+            </div>
+            <div class="col-sm-4">
+                <h4>Partner Hub</h4>
+                <h6>
+                    <ul>
+                        <li><a href="#">Learn</a></li>
+                        <li><a href="#">Promote</a></li>
+                        <li><a href="#">Track</a></li>
+                    </ul>
+                </h6>
+            </div>
+            <div class="col-sm-4">
+                <h4>Moderator Hub</h4>
+                <h6>
+                    <ul>
+                        <li><a href="#">Learn</a></li>
+                        <li><a href="#">Apply</a></li>
+                        <li><a href="#">Real Elles</a></li>
+                    </ul>
+                </h6>
+            </div>
+        </div>
+        <br>
+        <h6>Please do let us know if you have any questions or feedback at: <a href="mailto:hello@elleday.com" class="pink-font">hello@elleday.com</a><br>
+        © Elleday 2016. <a href="#">Privacy</a>, <a>terms & conditions apply</a>.</h6>
+    </div>
+</footer>
+      
+      
+      
+<!-- JAVASCRIPT -----------------------------------------------------------------> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Elleday</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/font-awesome.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/animate.css" type="text/css" />
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
+    </head>
+    
+<body>
+
+<!-- NAVBAR ----------------------------------------------------------------->    
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="static_pages/index.html">
+                    <img class="nav-logo" src="images/logo.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-signup navbar-btn" data-toggle="modal" data-target="#signup">
+                            Sign Up
+                        </button>
+                        <button type="button" class="btn btn-login navbar-btn" data-toggle="modal" data-target="#login">
+                            Log In
+                        </button>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- HEADER ----------------------------------------------------------------->  
+    <div class="container-fluid profile-page">
+        <div class="container-fluid profile-header">
+            <div class="row text-center">
+                <img src="images/profile-pic.jpg" class="img-responsive img-circle profile-pic">
+                <div class="overlap">
+                    <span class="karma-circle">5</span>
+                </div>
+                <h2>@MaggieSmith</h2>
+                <p>
+                    <b>USA • SUPER USER</b> • 
+                    <a href="#"><img src="images/facebook.png" class="social-icons"></a> • 
+                    <a href="#"><img src="images/twitter.png" class="social-icons"></a> • 
+                    <a href="#"><img src="images/instagram.png" class="social-icons"></a> • 
+                    <a href="#"><img src="images/pinterest.png" class="social-icons"></a>
+                </p>
+                <button class="btn btn-followers" type="button" data-toggle="modal" data-target=".following">7 FOLLOWING</button>
+                <div class="modal fade following" tabindex="-1" role="dialog" aria-labelledby="following">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <h5>FOLLOWING</h5>
+                            <hr>
+                            <div class="container-fluid">
+                                <div class="row followers-modal">
+                                    <div class="col-xs-2">
+                                        <img src="images/profile-pic-a.jpg" class="img-circle followers-pic pull-left">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <h5 class="text-left followers-text">@shakiratimlin</h5>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button type="button" class="btn followers-button follow-following follow-toggle">Following</button>
+                                    </div>
+                                </div>
+                                <div class="row followers-modal">
+                                    <div class="col-xs-2">
+                                        <img src="images/profile-pic-b.png" class="img-circle followers-pic pull-left">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <h5 class="text-left followers-text">@kevinsprayberry</h5>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button type="button" class="btn followers-button follow-following follow-toggle">Following</button>
+                                    </div>
+                                </div>
+                                <div class="row followers-modal">
+                                    <div class="col-xs-2">
+                                        <img src="images/profile-pic-c.png" class="img-circle followers-pic pull-left">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <h5 class="text-left followers-text">@kimimanfredi</h5>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button type="button" class="btn followers-button follow-following follow-toggle">Following</button>
+                                    </div>
+                                </div>
+                                <div class="row followers-modal">
+                                    <div class="col-xs-2">
+                                        <img src="images/profile-pic-d.jpg" class="img-circle followers-pic pull-left">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <h5 class="text-left followers-text">@maryanna</h5>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button type="button" class="btn followers-button follow-following follow-toggle">Following</button>
+                                    </div>
+                                </div>
+                                <div class="row followers-modal">
+                                    <div class="col-xs-2">
+                                        <img src="images/profile-pic-e.jpg" class="img-circle followers-pic pull-left">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <h5 class="text-left followers-text">@melodimosier</h5>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button type="button" class="btn followers-button follow-following follow-toggle">Following</button>
+                                    </div>
+                                </div>
+                                <div class="row followers-modal">
+                                    <div class="col-xs-2">
+                                        <img src="images/profile-pic-f.jpg" class="img-circle followers-pic pull-left">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <h5 class="text-left followers-text">@brooksdoetsch</h5>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button type="button" class="btn followers-button follow-following follow-toggle">Following</button>
+                                    </div>
+                                </div>
+                                <div class="row followers-modal">
+                                    <div class="col-xs-2">
+                                        <img src="images/profile-pic-g.jpg" class="img-circle followers-pic pull-left">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <h5 class="text-left followers-text">@dorseyjourney</h5>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button type="button" class="btn followers-button follow-following follow-toggle">Following</button>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn followers-btn follow-following-main follow-toggle-main">FOLLOW</button>
+                <button class="btn btn-followers" type="button" data-toggle="modal" data-target=".followers">7 FOLLOWERS</button>
+                <div class="modal fade followers" tabindex="-1" role="dialog" aria-labelledby="followers">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <h5>FOLLWERS</h5>
+                            <hr>
+                            <div class="container-fluid">
+                                <div class="row followers-modal">
+                                    <div class="col-xs-2">
+                                        <img src="images/profile-pic-a.jpg" class="img-circle followers-pic pull-left">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <h5 class="text-left followers-text">@shakiratimlin</h5>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button type="button" class="btn followers-button follow-following follow-toggle">Following</button>
+                                    </div>
+                                </div>
+                                <div class="row followers-modal">
+                                    <div class="col-xs-2">
+                                        <img src="images/profile-pic-b.png" class="img-circle followers-pic pull-left">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <h5 class="text-left followers-text">@kevinsprayberry</h5>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button type="button" class="btn followers-button follow-following follow-toggle">Following</button>
+                                    </div>
+                                </div>
+                                <div class="row followers-modal">
+                                    <div class="col-xs-2">
+                                        <img src="images/profile-pic-c.png" class="img-circle followers-pic pull-left">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <h5 class="text-left followers-text">@kimimanfredi</h5>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button type="button" class="btn followers-button follow-following follow-toggle">Following</button>
+                                    </div>
+                                </div>
+                                <div class="row followers-modal">
+                                    <div class="col-xs-2">
+                                        <img src="images/profile-pic-d.jpg" class="img-circle followers-pic pull-left">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <h5 class="text-left followers-text">@maryanna</h5>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button type="button" class="btn followers-button follow-following follow-toggle">Following</button>
+                                    </div>
+                                </div>
+                                <div class="row followers-modal">
+                                    <div class="col-xs-2">
+                                        <img src="images/profile-pic-e.jpg" class="img-circle followers-pic pull-left">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <h5 class="text-left followers-text">@melodimosier</h5>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button type="button" class="btn followers-button follow-following follow-toggle">Following</button>
+                                    </div>
+                                </div>
+                                <div class="row followers-modal">
+                                    <div class="col-xs-2">
+                                        <img src="images/profile-pic-f.jpg" class="img-circle followers-pic pull-left">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <h5 class="text-left followers-text">@brooksdoetsch</h5>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button type="button" class="btn followers-button follow-following follow-toggle">Following</button>
+                                    </div>
+                                </div>
+                                <div class="row followers-modal">
+                                    <div class="col-xs-2">
+                                        <img src="images/profile-pic-g.jpg" class="img-circle followers-pic pull-left">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <h5 class="text-left followers-text">@dorseyjourney</h5>
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <button type="button" class="btn followers-button follow-following follow-toggle">Following</button>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <br>
+                <button type="button" class="btn user-badge">Cozy</button>
+                <button type="button" class="btn user-badge">Wifi</button>
+                <button type="button" class="btn user-badge">Live Music</button>
+                <button type="button" class="btn user-badge">Serves Breakfast</button>
+                <button type="button" class="btn user-badge">Kid-friendly</button>
+                <button type="button" class="btn user-badge">Italian Cuisine</button>
+                <button type="button" class="btn user-badge">Greek Cuisine</button>
+                <button type="button" class="btn user-badge">Japanese Cuisine</button>
+            </div>
+        </div>
+            <div class="container">
+                <div class="row margin-top-spacing">
+                    <br>
+                    <!-- Carousel 1 -->
+                        <div class="col-sm-6">
+                            <h2 class="text-left grey-font">Saved Places</h2>
+                            <div id="carousel-slide-1" class="carousel slide margin-top-spacing" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-slide-1" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-slide-1" data-slide-to="1"></li>
+                                    <li data-target="#carousel-slide-1" data-slide-to="2"></li>
+                                </ol>
+                                <!-- Wrapper -->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <img src="images/places-featured-1.jpg" alt="Image Descrption 1">
+                                        <div class="carousel-caption">
+                                            Image Caption 1
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="images/places-featured-2.jpg" alt="Image Descrption 2">
+                                        <div class="carousel-caption">
+                                            Image Caption 2
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="images/places-featured-3.jpg" alt="Image Descrption 3">
+                                        <div class="carousel-caption">
+                                            Image Caption 3
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Controls -->
+                                <a class="left carousel-control" href="#carousel-slide-1" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#carousel-slide-1" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                            <h5 class="text-right"><a>View all saved places ></a></h5>
+                        </div>
+                    <!-- Carousel 2 -->
+                        <div class="col-sm-6">
+                            <h2 class="text-left grey-font">Vote History</h2>
+                            <div id="carousel-slide-2" class="carousel slide margin-top-spacing" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-slide-2" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-slide-2" data-slide-to="1"></li>
+                                    <li data-target="#carousel-slide-2" data-slide-to="2"></li>
+                                </ol>
+                                <!-- Wrapper -->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <img src="images/events-featured-1.jpg" alt="Image Descrption 1">
+                                        <div class="carousel-caption">
+                                            Image Caption 1
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="images/events-featured-2.jpg" alt="Image Descrption 2">
+                                        <div class="carousel-caption">
+                                            Image Caption 2
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="images/events-featured-3.jpg" alt="Image Descrption 3">
+                                        <div class="carousel-caption">
+                                            Image Caption 3
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Controls -->
+                                <a class="left carousel-control" href="#carousel-slide-2" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#carousel-slide-2" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                            <h5 class="text-right"><a>View full vote history ></a></h5>
+                        </div>
+                </div>
+                <hr>     
+            </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="text-left grey-font">Reviews (4)</h2>
+                </div>
+            </div>
+            <div class="row margin-top-spacing">
+                <div class="col-xs-12">
+                    <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-default active">All</button>
+                      <button type="button" class="btn btn-default">Most Popular</button>
+                      <button type="button" class="btn btn-default">Most Recent</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row margin-top-spacing">
+                <div class="col-xs-1">
+                    <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></p>
+                    <h5 class="reviews-rating">495</h5>
+                    <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></p><br>
+                </div>
+                <div class="col-xs-11">
+                    <h5 class="text-left">Best burger in town!</h5>
+                    <p class="text-left">
+                        <a href="#">Texas Burger Restaurant</a> • 
+                        <a class="btn btn-replies" role="button" data-toggle="collapse" href="#replies-collapse" aria-expanded="false" aria-controls="replies-collapse">5 Replies</a>
+                    </p>
+                    <div>
+                        <input type="checkbox" class="read-more-state" id="post-1" />
+                        <p class="read-more-wrap text-left">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultrices elit at libero sollicitudin porta. Suspendisse egestas iaculis scelerisque. Phasellus hendrerit tempus luctus. Donec iaculis risus non ante luctus dapibus. Proin porttitor bibendum volutpat.
+                            <span class="read-more-target">
+                                Sed quis diam vitae justo cursus dictum ullamcorper sed nulla. Quisque neque felis, lobortis eget sem et, egestas tempus enim. Ut a dignissim diam, eget condimentum turpis. Curabitur tincidunt velit eget viverra sagittis. Curabitur in pellentesque libero. Nullam lacinia mattis neque eu pretium. Aliquam a sem at ligula ullamcorper ultrices porttitor viverra lacus. Aliquam ipsum velit, fermentum sed venenatis sit amet, gravida sed neque. Proin laoreet tellus ut diam fermentum tempor. Nunc quis fringilla augue, in varius mi. Phasellus facilisis urna lorem, nec suscipit lacus convallis non. Fusce tempus tellus vel ante maximus dictum. Quisque non odio commodo, hendrerit purus sodales, aliquet massa. Maecenas consequat pulvinar turpis. Donec enim tellus, imperdiet et blandit et, convallis ut lectus. 
+                            </span>
+                        </p>
+                        <label for="post-1" class="read-more-trigger"></label> 
+                    </div>
+                </div>
+            </div>
+            <div class="collapse" id="replies-collapse">
+                <div class="well more-comments-well">
+                    <div class="row margin-top-spacing replied-comments">
+                        <hr>
+                        <div class="col-xs-1">
+                            <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></p>
+                            <h5 class="reviews-rating">112</h5>
+                            <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></p><br>
+                        </div>
+                        <div class="col-xs-11">
+                            <h5 class="text-left">better fries than mcd too</h5>
+                            <p class="text-left"><img src="images/profile-pic.jpg" class="img-circle reviews-profile-pic"><a href="#">@soccer63</a></p>
+                            <div>
+                                <input type="checkbox" class="read-more-state" id="post-1-1" />
+                                <p class="read-more-wrap text-left">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultrices elit at libero sollicitudin porta. Suspendisse egestas iaculis scelerisque. Phasellus hendrerit tempus luctus. Donec iaculis risus non ante luctus dapibus. Proin porttitor bibendum volutpat.
+                                    <span class="read-more-target">
+                                        Sed quis diam vitae justo cursus dictum ullamcorper sed nulla. Quisque neque felis, lobortis eget sem et, egestas tempus enim. Ut a dignissim diam, eget condimentum turpis. Curabitur tincidunt velit eget viverra sagittis. Curabitur in pellentesque libero. Nullam lacinia mattis neque eu pretium. Aliquam a sem at ligula ullamcorper ultrices porttitor viverra lacus. Aliquam ipsum velit, fermentum sed venenatis sit amet, gravida sed neque. Proin laoreet tellus ut diam fermentum tempor. Nunc quis fringilla augue, in varius mi. Phasellus facilisis urna lorem, nec suscipit lacus convallis non. Fusce tempus tellus vel ante maximus dictum. Quisque non odio commodo, hendrerit purus sodales, aliquet massa. Maecenas consequat pulvinar turpis. Donec enim tellus, imperdiet et blandit et, convallis ut lectus. 
+                                    </span>
+                                </p>
+                                <label for="post-1-1" class="read-more-trigger"></label> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row margin-top-spacing replied-comments">
+                        <hr>
+                        <div class="col-xs-1">
+                            <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></p>
+                            <h5 class="reviews-rating">5</h5>
+                            <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></p><br>
+                        </div>
+                        <div class="col-xs-11">
+                            <h5 class="text-left">Steak was horrible!</h5>
+                            <p class="text-left"><img src="images/profile-pic.jpg" class="img-circle reviews-profile-pic"><a href="#">@ninasash1</a></p>
+                            <div>
+                                <input type="checkbox" class="read-more-state" id="post-1-2" />
+                                <p class="read-more-wrap text-left">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultrices elit at libero sollicitudin porta. Suspendisse egestas iaculis scelerisque. Phasellus hendrerit tempus luctus. Donec iaculis risus non ante luctus dapibus. Proin porttitor bibendum volutpat.
+                                    <span class="read-more-target">
+                                        Sed quis diam vitae justo cursus dictum ullamcorper sed nulla. Quisque neque felis, lobortis eget sem et, egestas tempus enim. Ut a dignissim diam, eget condimentum turpis. Curabitur tincidunt velit eget viverra sagittis. Curabitur in pellentesque libero. Nullam lacinia mattis neque eu pretium. Aliquam a sem at ligula ullamcorper ultrices porttitor viverra lacus. Aliquam ipsum velit, fermentum sed venenatis sit amet, gravida sed neque. Proin laoreet tellus ut diam fermentum tempor. Nunc quis fringilla augue, in varius mi. Phasellus facilisis urna lorem, nec suscipit lacus convallis non. Fusce tempus tellus vel ante maximus dictum. Quisque non odio commodo, hendrerit purus sodales, aliquet massa. Maecenas consequat pulvinar turpis. Donec enim tellus, imperdiet et blandit et, convallis ut lectus. 
+                                    </span>
+                                </p>
+                                <label for="post-1-2" class="read-more-trigger"></label> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row margin-top-spacing replied-comments">
+                        <hr>
+                        <div class="col-xs-12">
+                            <form>
+                                <p class="text-left">Reply To Comment - (You're logged in as @maggiesmith • <a href="#">Log out</a>)</p>
+                                <textarea class="form-control" rows="2" placeholder="Your Message"></textarea>
+                                <br>
+                                <button type="submit" class="btn btn-default">Reply</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row margin-top-spacing">
+                <div class="col-xs-1">
+                    <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></p>
+                    <h5 class="reviews-rating">95</h5>
+                    <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></p><br>
+                </div>
+                <div class="col-xs-11">
+                    <h5 class="text-left">Cozy and warm</h5>
+                    <p class="text-left"><a href="#">Mirage Café</a></p>
+                    <div>
+                        <p class="text-left">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultrices elit at libero sollicitudin porta. Suspendisse egestas iaculis scelerisque. Phasellus hendrerit tempus luctus. Donec iaculis risus non ante luctus dapibus. Proin porttitor bibendum volutpat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+<!-- FOOTER -----------------------------------------------------------------> 
+<footer class="container-fluid footer-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>About</h4>
+                <h6>
+                    <ul>
+                        <li><a href="#">Team & Mission</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Credit</a></li>
+                    </ul>
+                </h6>
+            </div>
+            <div class="col-sm-4">
+                <h4>Partner Hub</h4>
+                <h6>
+                    <ul>
+                        <li><a href="#">Learn</a></li>
+                        <li><a href="#">Promote</a></li>
+                        <li><a href="#">Track</a></li>
+                    </ul>
+                </h6>
+            </div>
+            <div class="col-sm-4">
+                <h4>Moderator Hub</h4>
+                <h6>
+                    <ul>
+                        <li><a href="#">Learn</a></li>
+                        <li><a href="#">Apply</a></li>
+                        <li><a href="#">Real Elles</a></li>
+                    </ul>
+                </h6>
+            </div>
+        </div>
+        <br>
+        <h6>Please do let us know if you have any questions or feedback at: <a href="mailto:hello@elleday.com" class="pink-font">hello@elleday.com</a><br>
+        © Elleday 2016. <a href="#">Privacy</a>, <a>terms & conditions apply</a>.</h6>
+    </div>
+</footer>     
+      
+<!-- JAVASCRIPT -----------------------------------------------------------------> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+        $( ".follow-toggle" ).click(function() {
+          $(this).toggleClass( "followers-button" );
+        });
+    </script>
+    <script>
+    	$('.follow-following').click(function(){
+		var $this = $(this);
+		$this.toggleClass('follow-following');
+		if($this.hasClass('follow-following')){
+			$this.text('Following');			
+		} else {
+			$this.text('Follow');
+		}
+	   });
+    </script>
+    <script>
+        $( ".follow-toggle-main" ).click(function() {
+          $(this).toggleClass( "followers-btn" );
+        });
+    </script>
+    <script>
+        $('.follow-following-main').click(function(){
+        var $this = $(this);
+        $this.toggleClass('follow-following-main');
+        if($this.hasClass('follow-following-main')){
+            $this.text('FOLLOW');			
+        } else {
+            $this.text('FOLLOWING');
+        }
+        });
+    </script>
+<!-- Tags Search Bar --> 
+    <script>
+        $.expr[":"].contains = $.expr.createPseudo(function(arg) {
+          return function(elem) {
+            return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+          };
+        });
+        $(document).ready(function() {
+          $('#addTagBtn').click(function() {
+            $('#tags option:selected').each(function() {
+              $(this).appendTo($('#selectedTags'));
+            });
+          });
+          $('#removeTagBtn').click(function() {
+            $('#selectedTags option:selected').each(function(el) {
+              $(this).appendTo($('#tags'));
+            });
+          });
+          $('.tagRemove').click(function(event) {
+            event.preventDefault();
+            $(this).parent().remove();
+          });
+          $('ul.tags').click(function() {
+            $('#search-field').focus();
+          });
+          $('#search-field').keypress(function(event) {
+            if (event.which == '13') {
+              if (($(this).val() != '') && ($(".tags .addedTag:contains('" + $(this).val() + "') ").length == 0)) {
+
+                $('<li class="addedTag">' + $(this).val() + '<span class="tagRemove" onclick="$(this).parent().remove();">x</span><input type="hidden" value="' + $(this).val() + '" name="tags[]"></li>').insertBefore('.tags .tagAdd');
+                $(this).val('');
+
+              } else {
+                $(this).val('');
+
+              }
+            }
+          });
+
+        });    
+    </script> 
+    
+  </body>
+</html>

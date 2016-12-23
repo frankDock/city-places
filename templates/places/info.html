@@ -1,0 +1,588 @@
+{% load staticfiles %}
+
+{% block info_div %}
+    <span id="go-back" onclick="$('#info-div').removeClass('in');"><p class="text-left">< Go Back</p></span>
+    <h2>{{ place.title }}</h2>
+    <p>
+        {% for category in place.categories.all %}
+            {% if category.name == 'Nightlife' %}
+                <span class="glyphicon glyphicon-glass glyphicon-spacing"
+                      aria-hidden="true"></span>
+            {% elif category.name == 'Culture' %}
+                <span class="glyphicon glyphicon-globe glyphicon-spacing"
+                      aria-hidden="true"></span>
+            {% elif category.name == 'Sports' %}
+                <span class="glyphicon glyphicon-bullhorn glyphicon-spacing"
+                      aria-hidden="true"></span>
+            {% elif category.name == 'Fun' %}
+                <span class="glyphicon glyphicon-equalizer glyphicon-spacing"
+                      aria-hidden="true"></span>
+            {% elif category.name == 'Shop' %}
+                <span class="glyphicon lyphicon-shopping-cart glyphicon-spacing"
+                      aria-hidden="true"></span>
+            {% elif category.name == 'Eat' %}
+                <span class="glyphicon glyphicon-cutlery glyphicon-spacing"
+                      aria-hidden="true"></span>
+            {% elif category.name == 'Sights' %}
+                <span class="glyphicon glyphicon-eye-open glyphicon-camera"
+                      aria-hidden="true"></span>
+            {% elif category.name == 'Relax' %}
+                <span class="glyphicon glyphicon-knight glyphicon-spacing"
+                      aria-hidden="true"></span>
+            {% endif %}
+            {{ category.name }}{% if not forloop.last %} • {% endif %}
+        {% endfor %}
+    </p>
+    <div class="row text-center">
+        {% for tag in place.tags.all %}
+            <span class="badge">{{ tag.name }}</span>
+        {% endfor %}
+    </div>
+    <div class="row text-center">
+        <br>
+        <p id="votes-total">{{ place.total_votes }} people rated this place</p>
+        <p class="glyphicon-p">
+            <script>
+                function votePlaceUp() {
+                    ajaxGet("{% url 'places:vote_up' %}", {'place_id': {{ place.id }}}, function (content) {
+                        //onSuccess
+                        $("#positive-votes-{{ place.id }}").text(content["result"]);
+                        $("#votes-total").text(content["total"] + " people rated this place");
+                    })
+                }
+
+                function votePlaceDown() {
+                    ajaxGet("{% url 'places:vote_down' %}", {'place_id': {{ place.id }}}, function (content) {
+                        //onSuccess
+                        $("#negative-votes-{{ place.id }}").text(content["result"]);
+                        $("#votes-total").text(content["total"] + " people rated this place");
+                    })
+                }
+            </script>
+            <a href="#" onclick="votePlaceUp()">
+                <span id="positive-votes-{{ place.id }}">{{ place.positive_votes }}</span>
+                <span class="glyphicon glyphicon-thumbs-up glyphicon-spacing-2 margin-left"></span>
+            </a>
+
+            <a href="#" onclick="votePlaceDown()">
+                <span class="glyphicon glyphicon-thumbs-down glyphicon-spacing-2 margin-right"></span>
+                <span id="negative-votes-{{ place.id }}">{{ place.negative_votes }}</span>
+            </a>
+        </p>
+        <hr class="green-line">
+        <hr class="red-line">
+        <br><br>
+    </div>
+    <p>
+        <script>
+            function savePlace() {
+                ajaxPost("{% url 'places:save' %}", {'place_id': {{ place.id }}}, function (content) {
+                    //onSuccess
+                    $("#save-place-button").addClass('hidden');
+                    $("#remove-place-button").removeClass('hidden');
+                });
+            }
+
+            function removePlaceFromSaved() {
+                ajaxPost("{% url 'places:remove' %}", {'place_id': {{ place.id }}}, function (content) {
+                    //onSuccess
+                    $("#save-place-button").removeClass('hidden');
+                    $("#remove-place-button").addClass('hidden');
+                });
+            }
+        </script>
+        {% if place in user.profile.saved_places.all %}
+            <button type="button" class="btn btn-success" onclick="removePlaceFromSaved()" id="remove-place-button">
+                Saved Place
+            </button>
+            <button type="button" class="btn btn-default hidden" onclick="savePlace()" id="save-place-button">Save
+                Place
+            </button>
+        {% else %}
+            <button type="button" class="btn btn-success hidden" onclick="removePlaceFromSaved()"
+                    id="remove-place-button">Saved Place
+            </button>
+            <button type="button" class="btn btn-default" onclick="savePlace()" id="save-place-button">Save Place
+            </button>
+        {% endif %}
+        <button type="button" class="btn btn-pink">Get Directions</button>
+        <button type="button" class="btn btn-default" data-tooltip="Here is a sentence.">Give
+            Gold
+        </button>
+    </p>
+    <br>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="col-sm-12 margin-top-spacing">
+            <div id="carousel-slide" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    {% for image in images %}
+                        <li data-target="#carousel-slide" data-slide-to="{{ forloop.counter0 }}"
+                            {% if forloop.first %}class="active"{% endif %}></li>
+                    {% endfor %}
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    {% for image in images %}
+                        <div class="item {% if forloop.first %} active{% endif %}">
+                            <img src="{{ image.image.url }}"
+                                 alt="{{ image.descriptions }}"
+                                 data-toggle="modal" data-target=".info-carousel-img-modal-1">
+                            <div class="carousel-caption">
+                                {{ image.descriptions }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <a class="left carousel-control" href="#carousel-slide" role="button"
+                   data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-slide" role="button"
+                   data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="text-left grey-font">Reviews ({{ reviews_len }})</h2>
+        </div>
+    </div>
+    {% if user.is_authenticated %}
+        <div class="row padding-15 margin-top-spacing">
+            <button type="button" class="btn btn-default btn-sm" data-toggle="collapse"
+                    data-target="#add-review-collapse" aria-expanded="false"
+                    aria-controls="add-review-collapse">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add A Review
+            </button>
+            <div class="collapse" id="add-review-collapse">
+                <div class="well add-review-well">
+                    <h5 class="text-left">Add A Review</h5>
+                    <hr>
+                    <form method="post" id="add-review-form">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="text-left" data-tooltip="Here is a sentence.">Select A
+                                    Category: <span
+                                            class="glyphicon glyphicon-question-sign"></span></p>
+                            </div>
+                            <div class="col-sm-9">
+                                <div data-toggle="buttons">
+                                    <label class="btn btn-default filter-radio">
+                                        <input type="checkbox" name="review-category-atmosphere"
+                                               id="review-category-atmosphere">
+                                        <span class="radio-dot"></span>
+                                        <p class="grey-font filter-radio-text">Atmosphere</p>
+                                    </label>
+                                    <label class="btn btn-default filter-radio">
+                                        <input type="checkbox" name="review-category-food" id="review-category-food">
+                                        <span class="radio-dot"></span>
+                                        <p class="grey-font filter-radio-text">Food</p>
+                                    </label>
+                                    <label class="btn btn-default filter-radio">
+                                        <input type="checkbox" name="review-category-prices"
+                                               id="review-category-prices">
+                                        <span class="radio-dot"></span>
+                                        <p class="grey-font filter-radio-text">Prices</p>
+                                    </label>
+                                    <label class="btn btn-default filter-radio">
+                                        <input type="checkbox" name="review-category-general"
+                                               id="review-category-general">
+                                        <span class="radio-dot"></span>
+                                        <p class="grey-font filter-radio-text">General</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p class="text-left">Write A Review</p>
+                            <textarea class="form-control" rows="2" placeholder="Your Message"
+                                      name="review-text"></textarea>
+                                <br>
+                                <button type="button" class="btn btn-default" onclick="submitReview({{ place.id }})">Submit Review
+                                </button>
+                                <script>
+                                    function submitReview(place_id) {
+                                        place_id = place_id || 0;
+                                        var form = $("#add-review-form");
+                                        var datastring = JSON.stringify(form.serializeArray());
+                                        ajaxPost("{% url 'reviews:post' %}", {
+                                            "data": datastring,
+                                            "place_id": place_id
+                                        }, function (content) {
+                                            //onSuccess
+                                            alert(content);
+                                        });
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </form>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="text-left" data-tooltip="Here is a sentence.">Add Tags: <span
+                                    class="glyphicon glyphicon-question-sign"></span></p>
+                        </div>
+                        <div class="col-sm-9">
+                            <ol class="tags2">
+                                {% for tag in place.tags.all %}
+                                    <li class="addedTag2">
+                                        {{ tag.name }}<span onclick="$(this).parent().remove();"
+                                                            class="tagRemove2"> [X]</span><input type="hidden"
+                                                                                                 name="tags[]"
+                                                                                                 value="{{ tag.name }}"/>
+                                    </li>
+                                {% endfor %}
+                                <li class="tagAdd2 taglist2">
+                                    <input type="text" id="search-field2"
+                                           placeholder="Type and press 'Enter'">
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="text-left" data-tooltip="Here is a sentence.">Rate Tags: <span
+                                    class="glyphicon glyphicon-question-sign"></span></p>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <span class="badge">Cozy</span>
+                                </div>
+                                <div class="col-xs-9">
+                                    <button type="button" class="btn btn-default like" id="like1">
+                                        <span class="glyphicon glyphicon-thumbs-up"></span> Like
+                                    </button>
+                                    <div id="count_like1" class="zahl">105</div>
+                                    <button type="button" class="btn btn-default dislike"
+                                            id="dislike1">
+                                        <span class="glyphicon glyphicon-thumbs-down"></span>
+                                        Dislike
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <span class="badge">Wifi</span>
+                                </div>
+                                <div class="col-xs-9">
+                                    <button type="button" class="btn btn-default like" id="like2">
+                                        <span class="glyphicon glyphicon-thumbs-up"></span> Like
+                                    </button>
+                                    <div id="count_like2" class="zahl">32</div>
+                                    <button type="button" class="btn btn-default dislike"
+                                            id="dislike2">
+                                        <span class="glyphicon glyphicon-thumbs-down"></span>
+                                        Dislike
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <span class="badge">Family</span>
+                                </div>
+                                <div class="col-xs-9">
+                                    <button type="button" class="btn btn-default like" id="like3">
+                                        <span class="glyphicon glyphicon-thumbs-up"></span> Like
+                                    </button>
+                                    <div id="count_like3" class="zahl">54</div>
+                                    <button type="button" class="btn btn-default dislike"
+                                            id="dislike3">
+                                        <span class="glyphicon glyphicon-thumbs-down"></span>
+                                        Dislike
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <span class="badge">Quiet</span>
+                                </div>
+                                <div class="col-xs-9">
+                                    <button type="button" class="btn btn-default like" id="like4">
+                                        <span class="glyphicon glyphicon-thumbs-up"></span> Like
+                                    </button>
+                                    <div id="count_like4" class="zahl">10</div>
+                                    <button type="button" class="btn btn-default dislike"
+                                            id="dislike4">
+                                        <span class="glyphicon glyphicon-thumbs-down"></span>
+                                        Dislike
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-sm-3 filter-title">
+                                <p class="text-left" data-tooltip="Here is a sentence.">Rate
+                                    Preferences:
+                                    <span class="glyphicon glyphicon-question-sign"></span></p>
+                            </div>
+                            <div class="col-sm-9"></div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <h6 class="grey-font text-left"
+                                        data-tooltip="Here is a sentence.">
+                                        Budget</h6>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="range">
+                                        <output id="range">Moderate</output>
+                                        <input type="range" name="range" min="1" max="5" value="3"
+                                               onchange="range.value=value">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <h6 class="grey-font text-left"
+                                        data-tooltip="Here is a sentence.">
+                                        Style</h6>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="range">
+                                        <output id="range">Moderate</output>
+                                        <input type="range" name="range" min="1" max="5" value="3"
+                                               onchange="range.value=value">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <h6 class="grey-font text-left"
+                                        data-tooltip="Here is a sentence.">
+                                        Adventure</h6>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="range">
+                                        <output id="range">Moderate</output>
+                                        <input type="range" name="range" min="1" max="5" value="3"
+                                               onchange="range.value=value">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <h6 class="grey-font text-left"
+                                        data-tooltip="Here is a sentence.">Must
+                                        See</h6>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="range">
+                                        <output id="range">Moderate</output>
+                                        <input type="range" name="range" min="1" max="5" value="3"
+                                               onchange="range.value=value">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <hr>
+    <div class="row margin-top-spacing">
+        <div class="col-xs-12">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default active">All</button>
+                <button type="button" class="btn btn-default">Atmosphere</button>
+                <button type="button" class="btn btn-default">Food</button>
+                <button type="button" class="btn btn-default">Prices</button>
+                <button type="button" class="btn btn-default">General</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="reviews-filters">
+        <div class="row margin-top-spacing">
+            <div class="col-xs-1">
+                <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-up"
+                                             aria-hidden="true"></span></p>
+                <h5 class="reviews-rating">495</h5>
+                <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-down"
+                                             aria-hidden="true"></span></p><br>
+            </div>
+            <div class="col-xs-11">
+                <h5 class="text-left">Best burger in town!</h5>
+                <p class="text-left">
+                    <img src="{% static 'images/profile-pic.jpg' %}"
+                         class="img-circle reviews-profile-pic"><a
+                        href="#">@josiahwhite</a> • <a class="btn btn-replies" role="button"
+                                                       data-toggle="collapse"
+                                                       href="#replies-collapse"
+                                                       aria-expanded="false"
+                                                       aria-controls="replies-collapse">5
+                    comments</a>
+                </p>
+                <div>
+                    <input type="checkbox" class="read-more-state" id="post-1"/>
+                    <p class="read-more-wrap text-left">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+                        ultrices
+                        elit at libero sollicitudin porta. Suspendisse egestas iaculis
+                        scelerisque.
+                        Phasellus hendrerit tempus luctus. Donec iaculis risus non ante luctus
+                        dapibus.
+                        Proin porttitor bibendum volutpat.
+                                        <span class="read-more-target">
+                                        Sed quis diam vitae justo cursus dictum ullamcorper sed nulla. Quisque neque felis, lobortis eget sem et, egestas tempus enim. Ut a dignissim diam, eget condimentum turpis. Curabitur tincidunt velit eget viverra sagittis. Curabitur in pellentesque libero. Nullam lacinia mattis neque eu pretium. Aliquam a sem at ligula ullamcorper ultrices porttitor viverra lacus. Aliquam ipsum velit, fermentum sed venenatis sit amet, gravida sed neque. Proin laoreet tellus ut diam fermentum tempor. Nunc quis fringilla augue, in varius mi. Phasellus facilisis urna lorem, nec suscipit lacus convallis non. Fusce tempus tellus vel ante maximus dictum. Quisque non odio commodo, hendrerit purus sodales, aliquet massa. Maecenas consequat pulvinar turpis. Donec enim tellus, imperdiet et blandit et, convallis ut lectus.
+                                        </span>
+                    </p>
+                    <label for="post-1" class="read-more-trigger"></label>
+                </div>
+            </div>
+        </div>
+        <div class="collapse" id="replies-collapse">
+            <div class="well more-comments-well">
+                <div class="row margin-top-spacing replied-comments">
+                    <hr>
+                    <div class="col-xs-1">
+                        <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-up"
+                                                     aria-hidden="true"></span></p>
+                        <h5 class="reviews-rating">112</h5>
+                        <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-down"
+                                                     aria-hidden="true"></span></p><br>
+                    </div>
+                    <div class="col-xs-11">
+                        <h5 class="text-left">better fries than mcd too</h5>
+                        <p class="text-left"><img src="{% static 'images/profile-pic.jpg' %}"
+                                                  class="img-circle reviews-profile-pic"><a
+                                href="#">@soccer63</a>
+                        </p>
+                        <div>
+                            <input type="checkbox" class="read-more-state" id="post-1-1"/>
+                            <p class="read-more-wrap text-left">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Pellentesque
+                                ultrices elit at libero sollicitudin porta. Suspendisse egestas
+                                iaculis
+                                scelerisque. Phasellus hendrerit tempus luctus. Donec iaculis
+                                risus non
+                                ante luctus dapibus. Proin porttitor bibendum volutpat.
+                                                <span class="read-more-target">
+                                                Sed quis diam vitae justo cursus dictum ullamcorper sed nulla. Quisque neque felis, lobortis eget sem et, egestas tempus enim. Ut a dignissim diam, eget condimentum turpis. Curabitur tincidunt velit eget viverra sagittis. Curabitur in pellentesque libero. Nullam lacinia mattis neque eu pretium. Aliquam a sem at ligula ullamcorper ultrices porttitor viverra lacus. Aliquam ipsum velit, fermentum sed venenatis sit amet, gravida sed neque. Proin laoreet tellus ut diam fermentum tempor. Nunc quis fringilla augue, in varius mi. Phasellus facilisis urna lorem, nec suscipit lacus convallis non. Fusce tempus tellus vel ante maximus dictum. Quisque non odio commodo, hendrerit purus sodales, aliquet massa. Maecenas consequat pulvinar turpis. Donec enim tellus, imperdiet et blandit et, convallis ut lectus.
+                                                </span>
+                            </p>
+                            <label for="post-1-1" class="read-more-trigger"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margin-top-spacing replied-comments">
+                    <hr>
+                    <div class="col-xs-1">
+                        <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-up"
+                                                     aria-hidden="true"></span></p>
+                        <h5 class="reviews-rating">5</h5>
+                        <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-down"
+                                                     aria-hidden="true"></span></p><br>
+                    </div>
+                    <div class="col-xs-11">
+                        <h5 class="text-left">Steak was horrible!</h5>
+                        <p class="text-left"><img src="{% static 'images/profile-pic.jpg' %}"
+                                                  class="img-circle reviews-profile-pic"><a
+                                href="#">@ninasash1</a>
+                        </p>
+                        <div>
+                            <input type="checkbox" class="read-more-state" id="post-1-2"/>
+                            <p class="read-more-wrap text-left">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Pellentesque
+                                ultrices elit at libero sollicitudin porta. Suspendisse egestas
+                                iaculis
+                                scelerisque. Phasellus hendrerit tempus luctus. Donec iaculis
+                                risus non
+                                ante luctus dapibus. Proin porttitor bibendum volutpat.
+                                <span class="read-more-target">
+                                    Sed quis diam vitae justo cursus dictum ullamcorper sed nulla. Quisque neque felis, lobortis eget sem et, egestas tempus enim. Ut a dignissim diam, eget condimentum turpis. Curabitur tincidunt velit eget viverra sagittis. Curabitur in pellentesque libero. Nullam lacinia mattis neque eu pretium. Aliquam a sem at ligula ullamcorper ultrices porttitor viverra lacus. Aliquam ipsum velit, fermentum sed venenatis sit amet, gravida sed neque. Proin laoreet tellus ut diam fermentum tempor. Nunc quis fringilla augue, in varius mi. Phasellus facilisis urna lorem, nec suscipit lacus convallis non. Fusce tempus tellus vel ante maximus dictum. Quisque non odio commodo, hendrerit purus sodales, aliquet massa. Maecenas consequat pulvinar turpis. Donec enim tellus, imperdiet et blandit et, convallis ut lectus.
+                                </span>
+                            </p>
+                            <label for="post-1-2" class="read-more-trigger"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row margin-top-spacing replied-comments">
+                    <hr>
+                    <div class="col-xs-12">
+                        <form>
+                            <p class="text-left">Reply To Comment - (You're logged in as
+                                @maggiesmith •
+                                <a href="#">Log out</a>)</p>
+                                            <textarea class="form-control" rows="2"
+                                                      placeholder="Your Message"></textarea>
+                            <br>
+                            <button type="submit" class="btn btn-default">Reply</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        {% for review in reviews %}
+            <div class="row margin-top-spacing">
+                <div class="col-xs-1">
+                    <script>
+                        function voteReviewUp(review_id) {
+                            review_id = review_id || 0;
+                            ajaxPost("{% url 'reviews:vote_up' %}", {'review_id': review_id}, function (content) {
+                                //onSuccess
+                                $("#review-" + review_id + "-rating").text(content["result"]);
+                            })
+                        }
+
+                        function voteReviewDown(review_id) {
+                            review_id = review_id || 0;
+                            ajaxPost("{% url 'reviews:vote_down' %}", {'review_id': review_id}, function (content) {
+                                //onSuccess
+                                $("#review-" + review_id + "-rating").text(content["result"]);
+                            })
+                        }
+                    </script>
+                    <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-up"
+                                                 aria-hidden="true" onclick="voteReviewUp({{ review.id }})"></span></p>
+                    <h5 id="review-{{ review.id }}-rating" class="reviews-rating">{{ review.rating }}</h5>
+                    <p class="glyphicon-p"><span class="glyphicon glyphicon-menu-down"
+                                                 aria-hidden="true" onclick="voteReviewDown({{ review.id }})"></span>
+                    </p><br>
+                </div>
+                <div class="col-xs-11">
+                    <h5 class="text-left">{{ review.title }}</h5>
+                    <p class="text-left">
+                        <img src="{% static 'images/profile-pic.jpg' %}"
+                             class="img-circle reviews-profile-pic"><a
+                            href="#">@nicolegritchen</a>
+                    </p>
+                    <div>
+                        <p class="text-left">
+                            {{ review.text }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <hr>
+{% endblock %}

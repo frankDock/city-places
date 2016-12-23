@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Elleday</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/font-awesome.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/animate.css" type="text/css" />
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
+    </head>
+    
+<body>
+
+<!-- NAVBAR ----------------------------------------------------------------->    
+    <nav class="navbar navbar-default navbar-fixed-top nav-transparent">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img class="nav-logo" src="images/logo.png">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-signup navbar-btn" data-toggle="modal" data-target="#signup">
+                            Sign Up
+                        </button>
+                        <button type="button" class="btn btn-login navbar-btn" data-toggle="modal" data-target="#login">
+                            Log In
+                        </button>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="signuplabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="signuplabel">Sign Up For Elleday</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="signup" method="post" action="/signup">
+                        <input name="user[name]" type="text" placeholder="Type your username here" required="required" class="input">
+                        <input name="user[password]" type="password" placeholder="Choose a password" required="required" class="input">
+                        <input name="user[password2]" type="password" placeholder="Confirm your password" required="required" class="input">
+                        <input name="user[email]" type="email" placeholder="E-mail address" class="input">
+                        <input type="submit" value="Sign me up!" class="inputButton">
+                        <hr>
+                        <div class="text-center">
+                            <button class="btn btn-social btn-google text-center">
+                                <span class="fa fa-google"></span> <h6 class="social-button">Sign in with Google</h6>
+                            </button>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <button class="btn btn-social btn-facebook text-center">
+                                <span class="fa fa-facebook"></span> <h6 class="social-button">Sign in with Facebook</h6>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginlabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="loginlabel">Log In To Elleday</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="login" method="post" action="/login">
+                        <input name="user[name]" type="text" placeholder="Type your username here" required="required" class="input">
+                        <input name="user[password]" type="password" placeholder="Enter your password" required="required" class="input">
+                        <input type="submit" value="Log me in!" class="inputButton">
+                        <hr>
+                        <div class="text-center">
+                            <button class="btn btn-social btn-google text-center">
+                                <span class="fa fa-google"></span> <h6 class="social-button">Sign in with Google</h6>
+                            </button>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <button class="btn btn-social btn-facebook text-center">
+                                <span class="fa fa-facebook"></span> <h6 class="social-button">Sign in with Facebook</h6>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- HEADER ----------------------------------------------------------------->  
+    <div class="container-fluid about-bg">
+        <div class="row company-header">
+            <h1 class="white-font">Your City Guide</h1>
+        </div>
+        <div class="row margin-top-spacing">
+            <ul id="inline-list">
+                <li class="active"><a href="/company.html">Company</a></li>
+                <li><a href="/values.html">Values</a></li> 
+                <li><a href="/team.html">Team</a></li>
+                <li><a href="/contact.html">Contact</a></li> 
+            </ul>
+            <div class="container">
+                <div class="row margin-spacing">
+                    <div class="col-sm-3">
+                        <h5 class="about-h2">Our Mission</h5>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-left">
+                            Elleday helps anyone discover their next favourite places!<br><br>
+                            We help you find your way to explore the places you’ll love the most! Do more, travel, discover and make the most of your time!
+                        </p>
+                    </div>
+                </div>
+            <hr>
+            </div>
+            <div class="container">
+                <div class="row margin-spacing">
+                    <div class="col-sm-4">
+                        <h1 class="about-h1">2016</h1>
+                        <p class="text-left">Elleday is starting out in Tallinn, Estonia and we’re making our way to more cities soon!</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <h1 class="about-h1">AI</h1>
+                        <p class="text-left">
+                            Our personalised suggestions are getting better with time - we use a machine learning algorithm to develop better connections for you!
+                        </p>
+                    </div>
+                    <div class="col-sm-4">
+                        <h1 class="about-h1">25%</h1>
+                        <p class="text-left">
+                            We’re sharing 25 per cent of each city’s revenue with it’s moderators! Review places, earn karma and make some extra living!
+                        </p>
+                    </div>
+                </div>
+            <hr>
+            </div>
+            <div class="container">
+                <div class="row margin-spacing">
+                    <div class="col-sm-12">
+                        <img src="images/events-featured-2.jpg" class="about-image-1">
+                    </div>
+                </div>
+                <div class="row margin-spacing">
+                    <div class="col-sm-6">
+                        <img src="images/events-featured-2.jpg" class="about-image-1">
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="images/events-featured-2.jpg" class="about-image-1">
+                    </div>
+                </div>
+                <div class="row margin-spacing">
+                    <div class="col-sm-12">
+                        <img src="images/events-featured-2.jpg" class="about-image-1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- FOOTER -----------------------------------------------------------------> 
+    <footer class="container-fluid footer-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4>About</h4>
+                    <h6>
+                        <ul>
+                            <li><a href="#">Team & Mission</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </h6>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Partner Hub</h4>
+                    <h6>
+                        <ul>
+                            <li><a href="#">Learn</a></li>
+                            <li><a href="#">Promote</a></li>
+                            <li><a href="#">Track</a></li>
+                        </ul>
+                    </h6>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Moderator Hub</h4>
+                    <h6>
+                        <ul>
+                            <li><a href="#">Learn</a></li>
+                            <li><a href="#">Apply</a></li>
+                            <li><a href="#">Real Elles</a></li>
+                        </ul>
+                    </h6>
+                </div>
+            </div>
+            <br>
+            <h6>
+                Please do let us know if you have any questions or feedback at: <a href="mailto:hello@elleday.com" class="pink-font">hello@elleday.com</a><br> © Elleday 2016. <a href="#">Privacy</a>, <a>terms & conditions apply</a>.
+            </h6>
+        </div>
+    </footer>
+
+<!-- JAVASCRIPT -----------------------------------------------------------------> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </body>
+</html>

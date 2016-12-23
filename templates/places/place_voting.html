@@ -1,0 +1,20 @@
+{% extends 'places/info.html' %}
+
+{% block place_voting %}
+    <br>
+    <p>{{ place.total_votes }} people rated this place</p>
+    <p class="glyphicon-p">
+        <a href="{% url 'vote_place_up' place_id=place.id %}">
+            <span id="positive-votes-{{ place.id }}">{{ place.positive_votes }}</span>
+            <span class="glyphicon glyphicon-thumbs-up glyphicon-spacing-2 margin-left"></span>
+        </a>
+
+        <a href="{% url 'vote_place_down' place_id=place.id %}">
+            <span class="glyphicon glyphicon-thumbs-down glyphicon-spacing-2 margin-right"></span>
+            <span id="negative-votes-{{ place.id }}">{{ place.negative_votes }}</span>
+        </a>
+    </p>
+    <hr class="green-line">
+    <hr class="red-line">
+    <br><br>
+{% endblock %}
